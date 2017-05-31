@@ -4,9 +4,9 @@ import { get } from '../api/api.sagas';
 import { MaintainersTypes, MaintainersActions } from './maintainers.redux';
 
 
-export function* fetchMaintainersSaga({ language }) {
+export function* fetchMaintainersSaga() {
   try {
-    const data = yield call(get, '/fixtures/maintainers.json', { language });
+    const data = yield call(get, 'https://ghibliapi.herokuapp.com/films/');
 
     yield put(MaintainersActions.fetchSuccess(data));
   } catch (e) {

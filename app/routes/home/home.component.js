@@ -18,7 +18,7 @@ export class Home extends PureComponent {
   };
 
   componentWillMount() {
-    this.props.fetchMaintainers(this.props.language);
+    this.props.fetchMaintainers();
   }
 
   componentWillReceiveProps(nextProps) {

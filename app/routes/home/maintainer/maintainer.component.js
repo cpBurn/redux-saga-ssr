@@ -9,7 +9,7 @@ export class Maintainer extends PureComponent {
   render() {
     return (
       <li className="maintainer">
-        {this.props.data.get('firstName')} {this.props.data.get('lastName')} &lt;{this.props.data.get('email')}&gt;
+        {this.props.data.get('title')}
       </li>
     );
   }

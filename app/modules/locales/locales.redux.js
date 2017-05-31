@@ -9,7 +9,7 @@ export const { Types: LocalesTypes, Creators: LocalesActions } = createActions({
 }, { prefix: 'LOCALES_' });
 
 const LocalesRecord = new Record({
-  language: null,
+  language: 'en',
 });
 
 export const INITIAL_STATE = new LocalesRecord({});

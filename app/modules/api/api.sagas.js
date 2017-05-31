@@ -8,12 +8,8 @@ export function parseJSON(response) {
 }
 
 export function* requestSaga(url, options) {
-  const headers = {
-    'Content-Type': 'application/json',
-  };
-
   try {
-    const response = yield call(fetch, url, assign({ headers }, options));
+    const response = yield call(fetch, url, assign({ }, options));
     return yield call(parseJSON, response);
   } catch (e) {
     return yield call(parseJSON, e);

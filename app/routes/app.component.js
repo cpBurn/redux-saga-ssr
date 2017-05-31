@@ -1,11 +1,8 @@
 import React, { PropTypes, PureComponent } from 'react';
 import Helmet from 'react-helmet';
 import { IntlProvider } from 'react-intl';
-import { get } from 'lodash';
 
-import { appLocales, translationMessages } from '../i18n';
-import { DEFAULT_LOCALE } from '../modules/locales/locales.redux';
-
+import { translationMessages } from '../i18n';
 
 export class App extends PureComponent {
   static propTypes = {
@@ -14,17 +11,6 @@ export class App extends PureComponent {
     setLanguage: PropTypes.func.isRequired,
     children: PropTypes.node,
   };
-
-  componentWillMount() {
-    const language = get(this.props.router, 'params.lang', DEFAULT_LOCALE);
-
-    if (appLocales.indexOf(language) === -1) {
-      this.props.setLanguage(DEFAULT_LOCALE);
-      this.props.router.push('/404');
-    } else {
-      this.props.setLanguage(language);
-    }
-  }
 
   render() {
     if (!this.props.language) {
